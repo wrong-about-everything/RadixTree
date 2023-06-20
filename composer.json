@@ -1,0 +1,18 @@
+{
+    "name": "wrong-about-everything/radix-tree",
+    "description": "This library builds a radix tree and outputs it either as is, or as a reg exp.",
+    "autoload": {
+        "psr-4": {
+            "WrongAboutEverything\\RadixTree\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WrongAboutEverything\\RadixTree\\Tests\\": "test/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    }
+}

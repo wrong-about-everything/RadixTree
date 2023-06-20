@@ -1,0 +1,7 @@
+/vendor
+/.idea
+.directory
+/test/phpunit.xml
+/tmp
+/logs
+*.iml
