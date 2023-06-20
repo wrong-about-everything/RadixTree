@@ -1,6 +1,7 @@
 {
     "name": "wrong-about-everything/radix-tree",
     "description": "This library builds a radix tree and outputs it either as is, or as a reg exp.",
+    "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
             "WrongAboutEverything\\RadixTree\\": "src/"
