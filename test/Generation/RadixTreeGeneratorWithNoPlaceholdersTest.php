@@ -26,6 +26,33 @@ class RadixTreeGeneratorWithNoPlaceholdersTest extends TestCase
         $this->doTestDataItems($dataItemPermutations, $expectedTree);
     }
 
+    public function testVasya()
+    {
+        $this->doTestDataItems(
+            [
+                [
+                    self::dataItem('/vas/hey', 1),
+                    self::dataItem('/vas/heyday', 2),
+                ]
+            ],
+            new DefaultInternalNode(
+                [8],
+                [
+                    '/vas/hey' =>
+                        new DefaultInternalNodeWithLeafNode(
+                            new DefaultInternalNode(
+                                [3],
+                                [
+                                    'day' => new DefaultLeafNode(2)
+                                ]
+                            ),
+                            new DefaultLeafNode(1)
+                        )
+                ]
+            )
+        );
+    }
+
     static public function dataItemPermutations()
     {
         ini_set('memory_limit', '512M');

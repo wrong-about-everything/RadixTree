@@ -136,8 +136,8 @@ class RadixTreeAsRegEx
                                     $node->keyToNodeArray()
                                 )
                             ),
-                            function (array $acc, string $nodeString, string $key) use ($tabsCount) {
-                                $acc[] = sprintf('%s%s', $key, $nodeString);
+                            function (array $acc, string $nodeString, string $key) use ($tabsCount, $newLine) {
+                                $acc[] = $this->tabbedLines(sprintf('%s%s', $key, $nodeString), 0, $newLine);
                                 return $acc;
                             }
                         )
@@ -185,7 +185,7 @@ class RadixTreeAsRegEx
                 sprintf(
                     '%s(?|%s)?',
                     $this->leafNodeString($node->leafNode()),
-                    $this->internalNodeString($node->internalNode(), 0, false)
+                    $this->internalNodeString($node->internalNode(), 0, true)
                 ),
                 $tabsCount,
                 $newLine
@@ -199,7 +199,7 @@ class RadixTreeAsRegEx
                 sprintf(
                     '%s(?|%s)?',
                     $this->leafNodeWithTerminatingPlaceholderString($node->leafNode()),
-                    $this->internalNodeString($node->internalNode(), 0, false)
+                    $this->internalNodeString($node->internalNode(), 0, true)
                 ),
                 $tabsCount,
                 $newLine

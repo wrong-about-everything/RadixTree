@@ -337,7 +337,7 @@ class RadixTreeGeneratorWithPlaceholdersAndConflictingFixedPathElementsTest exte
                                                                                     new DefaultInternalNode(
                                                                                         [10],
                                                                                         [
-                                                                                            'vakhlakov/' => new LeafNodeWithTerminatingPlaceholder(3),
+                                                                                            'vakhlakov/' => new LeafNodeWithTerminatingPlaceholder(7),
                                                                                         ]
                                                                                     ),
                                                                                     new InternalNodeWithPlaceholderPrefix(
@@ -490,7 +490,7 @@ class RadixTreeGeneratorWithPlaceholdersAndConflictingFixedPathElementsTest exte
                 self::dataItem('/vasilev/:anton/vasily/:belov', 1),
                 self::dataItem('/vasilev/:anton/anton/:petrovich/anton/:vasilyev', 2),
                 self::dataItem('/vasilev/baton/:vakhlakov/vakhlakov', 3),
-                self::dataItem('/vasilev/baton/vakhlakov/:vakhlakov', 3),
+                self::dataItem('/vasilev/baton/vakhlakov/:vakhlakov', 7),
                 self::dataItem('/vasilevs/:antons/tabakovs/:matskyavichus', 4),
                 self::dataItem('/vasile/:anton', 5),
             ];
