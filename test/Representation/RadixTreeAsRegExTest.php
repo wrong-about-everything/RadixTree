@@ -17,16 +17,33 @@ class RadixTreeAsRegExTest extends TestCase
 
         $regEx = (new RadixTreeAsRegEx((new RadixTreeGenerator($dataItems))->value(), false))->value();
 
-        $this->assertEquals('#(?|/vasil(?|e(?|/(?|(?|antoine/vakhlakov(*:62))|([^/]+)(*:68)(?|(?|/vakhlakov(*:39)))?)|v(*:63)(?|(?|/(?|(?|baton/(?|(?|vakhlakov/(?|(?|vakhlakov(*:13)(?|(?|/(?|(?|vakhlakov(*:15)(?|(?|/(?|(?|buldakov(*:16))|([^/]+)(*:17))))?)|([^/]+)(*:14))))?)|([^/]+)(*:8)(?|(?|/(?|(?|vakhlakov(*:10)(?|(?|/(?|(?|buldakov(*:11))|([^/]+)(*:12))))?)|([^/]+)(*:9))))?))|([^/]+)(?|/(?|(?|vakhlakov(*:0)(?|(?|/(?|(?|vakhlakov(*:7))|([^/]+)(*:6))))?)|([^/]+)(*:1)(?|(?|/(?|(?|vakhlakov(*:3)(?|(?|/(?|(?|buldakov(*:4))|([^/]+)(*:5))))?)|([^/]+)(*:2))))?)))|makarev(*:41)(?|(?|/([^/]+)(?|/([^/]+)(*:42))|i(*:48)(?|(?|/([^/]+)(?|/([^/]+)(*:38))|ch(*:64)(?|(?|/vasilev(*:65)(?|(?|/makarevich(*:66)(?|(?|/vasilev(*:67)))?))?))?))?))?|anton(*:60)(?|(?|/([^/]+)(*:59)(?|(?|/petrovich(*:58)(?|(?|/([^/]+)(*:57)(?|(?|/vasilyev(*:56)))?))?))?))?)|([^/]+)(*:51)(?|(?|/(?|(?|va(?|khlakov/(?|(?|vakhlakov(*:22)(?|(?|/(?|(?|vakhlakov(*:19)(?|(?|/(?|(?|buldakov(*:20))|([^/]+)(*:21))))?)|([^/]+)(*:27))))?)|([^/]+)(*:23)(?|(?|/(?|(?|vakhlakov(*:24)(?|(?|/(?|(?|buldakov(*:25))|([^/]+)(*:26))))?)|([^/]+)(*:18))))?)|sily/(?|(?|belov(*:44)(?|(?|/(?|(?|htonc(*:47))|([^/]+)(*:45))))?)|([^/]+)(*:43)(?|(?|/htonc(*:46)))?))|anton(*:52)(?|(?|/([^/]+)(*:53)(?|(?|/anton(*:54)(?|(?|/([^/]+)(*:55)))?))?))?)|([^/]+)(?|/(?|(?|vakhlakov(*:33)(?|(?|/(?|(?|vakhlakov(*:35)(?|(?|/(?|(?|buldakov(*:36))|([^/]+)(*:37))))?)|([^/]+)(*:34))))?)|([^/]+)(*:28)(?|(?|/(?|(?|vakhlakov(*:30)(?|(?|/(?|(?|buldakov(*:31))|([^/]+)(*:32))))?)|([^/]+)(*:29))))?)))))?)|s/([^/]+)(?|/tabakovs/([^/]+)(*:49))|ich/([^/]+)(?|/([^/]+)(?|/belov(*:61)))))?)|y/(?|(?|belov(*:50))|([^/]+)(*:40))))#', $regEx);
+        $this->assertEquals('#^(?|/vasil(?|e(?|/(?|(?|antoine/vakhlakov(*:62))|([^/]+)(*:68)(?|(?|/vakhlakov(*:39)))?)|v(*:63)(?|(?|/(?|(?|baton/(?|(?|vakhlakov/(?|(?|vakhlakov(*:13)(?|(?|/(?|(?|vakhlakov(*:15)(?|(?|/(?|(?|buldakov(*:16))|([^/]+)(*:17))))?)|([^/]+)(*:14))))?)|([^/]+)(*:8)(?|(?|/(?|(?|vakhlakov(*:10)(?|(?|/(?|(?|buldakov(*:11))|([^/]+)(*:12))))?)|([^/]+)(*:9))))?))|([^/]+)(?|/(?|(?|vakhlakov(*:0)(?|(?|/(?|(?|vakhlakov(*:7))|([^/]+)(*:6))))?)|([^/]+)(*:1)(?|(?|/(?|(?|vakhlakov(*:3)(?|(?|/(?|(?|buldakov(*:4))|([^/]+)(*:5))))?)|([^/]+)(*:2))))?)))|makarev(*:41)(?|(?|/([^/]+)(?|/([^/]+)(*:42))|i(*:48)(?|(?|/([^/]+)(?|/([^/]+)(*:38))|ch(*:64)(?|(?|/vasilev(*:65)(?|(?|/makarevich(*:66)(?|(?|/vasilev(*:67)))?))?))?))?))?|anton(*:60)(?|(?|/([^/]+)(*:59)(?|(?|/petrovich(*:58)(?|(?|/([^/]+)(*:57)(?|(?|/vasilyev(*:56)))?))?))?))?)|([^/]+)(*:51)(?|(?|/(?|(?|va(?|khlakov/(?|(?|vakhlakov(*:22)(?|(?|/(?|(?|vakhlakov(*:19)(?|(?|/(?|(?|buldakov(*:20))|([^/]+)(*:21))))?)|([^/]+)(*:27))))?)|([^/]+)(*:23)(?|(?|/(?|(?|vakhlakov(*:24)(?|(?|/(?|(?|buldakov(*:25))|([^/]+)(*:26))))?)|([^/]+)(*:18))))?)|sily/(?|(?|belov(*:44)(?|(?|/(?|(?|htonc(*:47))|([^/]+)(*:45))))?)|([^/]+)(*:43)(?|(?|/htonc(*:46)))?))|anton(*:52)(?|(?|/([^/]+)(*:53)(?|(?|/anton(*:54)(?|(?|/([^/]+)(*:55)))?))?))?)|([^/]+)(?|/(?|(?|vakhlakov(*:33)(?|(?|/(?|(?|vakhlakov(*:35)(?|(?|/(?|(?|buldakov(*:36))|([^/]+)(*:37))))?)|([^/]+)(*:34))))?)|([^/]+)(*:28)(?|(?|/(?|(?|vakhlakov(*:30)(?|(?|/(?|(?|buldakov(*:31))|([^/]+)(*:32))))?)|([^/]+)(*:29))))?)))))?)|s/([^/]+)(?|/tabakovs/([^/]+)(*:49))|ich/([^/]+)(?|/([^/]+)(?|/belov(*:61)))))?)|y/(?|(?|belov(*:50))|([^/]+)(*:40))))$#', $regEx);
         $this->lookUpExistingKeysSuccessfully($dataItems, $regEx);
     }
 
-    public function testKeysDontMatchRegEx()
+    public function testRandomKeysDontMatchRegEx()
     {
         $regEx = (new RadixTreeAsRegEx((new RadixTreeGenerator($this->dataItems()))->value(), false))->value();
 
-        $this->assertEquals('#(?|/vasil(?|e(?|/(?|(?|antoine/vakhlakov(*:62))|([^/]+)(*:68)(?|(?|/vakhlakov(*:39)))?)|v(*:63)(?|(?|/(?|(?|baton/(?|(?|vakhlakov/(?|(?|vakhlakov(*:13)(?|(?|/(?|(?|vakhlakov(*:15)(?|(?|/(?|(?|buldakov(*:16))|([^/]+)(*:17))))?)|([^/]+)(*:14))))?)|([^/]+)(*:8)(?|(?|/(?|(?|vakhlakov(*:10)(?|(?|/(?|(?|buldakov(*:11))|([^/]+)(*:12))))?)|([^/]+)(*:9))))?))|([^/]+)(?|/(?|(?|vakhlakov(*:0)(?|(?|/(?|(?|vakhlakov(*:7))|([^/]+)(*:6))))?)|([^/]+)(*:1)(?|(?|/(?|(?|vakhlakov(*:3)(?|(?|/(?|(?|buldakov(*:4))|([^/]+)(*:5))))?)|([^/]+)(*:2))))?)))|makarev(*:41)(?|(?|/([^/]+)(?|/([^/]+)(*:42))|i(*:48)(?|(?|/([^/]+)(?|/([^/]+)(*:38))|ch(*:64)(?|(?|/vasilev(*:65)(?|(?|/makarevich(*:66)(?|(?|/vasilev(*:67)))?))?))?))?))?|anton(*:60)(?|(?|/([^/]+)(*:59)(?|(?|/petrovich(*:58)(?|(?|/([^/]+)(*:57)(?|(?|/vasilyev(*:56)))?))?))?))?)|([^/]+)(*:51)(?|(?|/(?|(?|va(?|khlakov/(?|(?|vakhlakov(*:22)(?|(?|/(?|(?|vakhlakov(*:19)(?|(?|/(?|(?|buldakov(*:20))|([^/]+)(*:21))))?)|([^/]+)(*:27))))?)|([^/]+)(*:23)(?|(?|/(?|(?|vakhlakov(*:24)(?|(?|/(?|(?|buldakov(*:25))|([^/]+)(*:26))))?)|([^/]+)(*:18))))?)|sily/(?|(?|belov(*:44)(?|(?|/(?|(?|htonc(*:47))|([^/]+)(*:45))))?)|([^/]+)(*:43)(?|(?|/htonc(*:46)))?))|anton(*:52)(?|(?|/([^/]+)(*:53)(?|(?|/anton(*:54)(?|(?|/([^/]+)(*:55)))?))?))?)|([^/]+)(?|/(?|(?|vakhlakov(*:33)(?|(?|/(?|(?|vakhlakov(*:35)(?|(?|/(?|(?|buldakov(*:36))|([^/]+)(*:37))))?)|([^/]+)(*:34))))?)|([^/]+)(*:28)(?|(?|/(?|(?|vakhlakov(*:30)(?|(?|/(?|(?|buldakov(*:31))|([^/]+)(*:32))))?)|([^/]+)(*:29))))?)))))?)|s/([^/]+)(?|/tabakovs/([^/]+)(*:49))|ich/([^/]+)(?|/([^/]+)(?|/belov(*:61)))))?)|y/(?|(?|belov(*:50))|([^/]+)(*:40))))#', $regEx);
-        $this->lookUpNonExistingKeysAndFindNothing($this->dataItems(), $regEx);
+        $this->assertEquals('#^(?|/vasil(?|e(?|/(?|(?|antoine/vakhlakov(*:62))|([^/]+)(*:68)(?|(?|/vakhlakov(*:39)))?)|v(*:63)(?|(?|/(?|(?|baton/(?|(?|vakhlakov/(?|(?|vakhlakov(*:13)(?|(?|/(?|(?|vakhlakov(*:15)(?|(?|/(?|(?|buldakov(*:16))|([^/]+)(*:17))))?)|([^/]+)(*:14))))?)|([^/]+)(*:8)(?|(?|/(?|(?|vakhlakov(*:10)(?|(?|/(?|(?|buldakov(*:11))|([^/]+)(*:12))))?)|([^/]+)(*:9))))?))|([^/]+)(?|/(?|(?|vakhlakov(*:0)(?|(?|/(?|(?|vakhlakov(*:7))|([^/]+)(*:6))))?)|([^/]+)(*:1)(?|(?|/(?|(?|vakhlakov(*:3)(?|(?|/(?|(?|buldakov(*:4))|([^/]+)(*:5))))?)|([^/]+)(*:2))))?)))|makarev(*:41)(?|(?|/([^/]+)(?|/([^/]+)(*:42))|i(*:48)(?|(?|/([^/]+)(?|/([^/]+)(*:38))|ch(*:64)(?|(?|/vasilev(*:65)(?|(?|/makarevich(*:66)(?|(?|/vasilev(*:67)))?))?))?))?))?|anton(*:60)(?|(?|/([^/]+)(*:59)(?|(?|/petrovich(*:58)(?|(?|/([^/]+)(*:57)(?|(?|/vasilyev(*:56)))?))?))?))?)|([^/]+)(*:51)(?|(?|/(?|(?|va(?|khlakov/(?|(?|vakhlakov(*:22)(?|(?|/(?|(?|vakhlakov(*:19)(?|(?|/(?|(?|buldakov(*:20))|([^/]+)(*:21))))?)|([^/]+)(*:27))))?)|([^/]+)(*:23)(?|(?|/(?|(?|vakhlakov(*:24)(?|(?|/(?|(?|buldakov(*:25))|([^/]+)(*:26))))?)|([^/]+)(*:18))))?)|sily/(?|(?|belov(*:44)(?|(?|/(?|(?|htonc(*:47))|([^/]+)(*:45))))?)|([^/]+)(*:43)(?|(?|/htonc(*:46)))?))|anton(*:52)(?|(?|/([^/]+)(*:53)(?|(?|/anton(*:54)(?|(?|/([^/]+)(*:55)))?))?))?)|([^/]+)(?|/(?|(?|vakhlakov(*:33)(?|(?|/(?|(?|vakhlakov(*:35)(?|(?|/(?|(?|buldakov(*:36))|([^/]+)(*:37))))?)|([^/]+)(*:34))))?)|([^/]+)(*:28)(?|(?|/(?|(?|vakhlakov(*:30)(?|(?|/(?|(?|buldakov(*:31))|([^/]+)(*:32))))?)|([^/]+)(*:29))))?)))))?)|s/([^/]+)(?|/tabakovs/([^/]+)(*:49))|ich/([^/]+)(?|/([^/]+)(?|/belov(*:61)))))?)|y/(?|(?|belov(*:50))|([^/]+)(*:40))))$#', $regEx);
+        $this->lookUpRandomNonExistingKeysAndFindNothing($this->dataItems(), $regEx);
+    }
+
+    public function testExistingKeysWithSuffixesAndPrefixesDontMatchRegEx()
+    {
+        $regEx =
+            (new RadixTreeAsRegEx(
+                (new RadixTreeGenerator(
+                    [$this->dataItem('/vasilev/baton/:vakhlakov/vakhlakov', 0)]
+                ))
+                    ->value(),
+                false
+            ))
+                ->value();
+
+        $this->assertEquals('#^(?|/vasilev/baton/([^/]+)(?|/vakhlakov(*:0)))$#', $regEx);
+        $this->lookUpExistingKeysWithRandomPrefixesAndFindNothing($this->dataItems(), $regEx);
+        $this->lookUpExistingKeysWithSuffixesAndFindNothing($this->dataItems(), $regEx);
     }
 
     private function dataItems(): array
@@ -121,13 +138,33 @@ class RadixTreeAsRegExTest extends TestCase
         }
     }
 
-    private function lookUpNonExistingKeysAndFindNothing(array $dataItems, string $regEx)
+    private function lookUpRandomNonExistingKeysAndFindNothing(array $dataItems, string $regEx)
     {
-        $characters = 'abcdef/ghijklm/nopqrstu/vwxyzAB/CDEFGHI/JKLMNOPQ/RSTUVW/XYZ0123/456789';
-
         for ($i = 0; $i < count($dataItems); $i++) {
-            $randomString = substr(str_shuffle($characters), 0, mt_rand(1, 60));
-            $result = preg_match($regEx, $randomString, $matches);
+            $randomString = $this->randomString(60);
+            $result = preg_match($regEx, $randomString);
+            $this->assertEquals(0, $result);
+        }
+    }
+
+    private function lookUpExistingKeysWithRandomPrefixesAndFindNothing(array $dataItems, string $regEx)
+    {
+        foreach ($dataItems as $dataItem) {
+            $queryStringAndGeneratedPlaceholders = $this->queryStringAndGeneratedPlaceholders($dataItem->key());
+            $result = preg_match($regEx, $this->randomString(5) . $queryStringAndGeneratedPlaceholders[0]);
+            $this->assertEquals(0, $result);
+        }
+    }
+
+    private function lookUpExistingKeysWithSuffixesAndFindNothing(array $dataItems, string $regEx)
+    {
+        foreach ($dataItems as $dataItem) {
+            $queryStringAndGeneratedPlaceholders = $this->queryStringAndGeneratedPlaceholders($dataItem->key());
+            $r = $this->randomString(5);
+            $result = preg_match($regEx, $queryStringAndGeneratedPlaceholders[0] . '/' . $r);
+            if ($result === 1) {
+                var_dump($queryStringAndGeneratedPlaceholders[0] . '/' . $r);
+            }
             $this->assertEquals(0, $result);
         }
     }
@@ -146,6 +183,12 @@ class RadixTreeAsRegExTest extends TestCase
         }
 
         return ['/' . implode('/', $queryParts), $generatedPlaceholders];
+    }
+
+    private function randomString(int $maxLength): string
+    {
+        $characters = 'abcdef/ghijklm/nopqrstu/vwxyzAB/CDEFGHI/JKLMNOPQ/RSTUVW/XYZ0123/456789';
+        return substr(str_shuffle($characters), 0, mt_rand(1, $maxLength));
     }
 
     private function dataItem(string $path, int $index): DataItem

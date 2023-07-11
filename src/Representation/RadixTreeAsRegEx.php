@@ -34,7 +34,7 @@ class RadixTreeAsRegEx
 
     public function value(): string
     {
-        return sprintf('#%s#', $this->regEx($this->internalNode, 0, false));
+        return sprintf('#^%s$#', $this->regEx($this->internalNode, 0, false));
     }
 
     private function regEx(RadixTreeNode $node, int $tabsCount, bool $newLine): string
